@@ -19,7 +19,7 @@ const projects = [
     id: "3",
     name: "Moviesite",
     description: "Movie Review application",
-    githubLink: "https://github.com/Calcifer077/Movie-website-Incomplete-",
+    githubLink: "https://github.com/Calcifer077/Movie-website",
     image: "moviesite.png",
   },
   {
