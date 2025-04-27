@@ -14,7 +14,7 @@ import { motion } from "framer-motion";
 // 'comeFrom' tells from which direction transition will happen.
 // 'className' is used for styling.
 
-function ScrollIntoView({ children, comeFrom, className }) {
+function ScrollIntoView({ children, comeFrom, className, id }) {
   if (comeFrom == "bottom") {
     return (
       <motion.div
@@ -30,6 +30,7 @@ function ScrollIntoView({ children, comeFrom, className }) {
         }}
         viewport={{ once: true }}
         className={className}
+        id={id}
       >
         {children}
       </motion.div>
@@ -50,6 +51,7 @@ function ScrollIntoView({ children, comeFrom, className }) {
           delay: 0.25,
         }}
         viewport={{ once: true }}
+        id={id}
         className={className}
       >
         {children}
@@ -71,6 +73,7 @@ function ScrollIntoView({ children, comeFrom, className }) {
           delay: 0.25,
         }}
         viewport={{ once: true }}
+        id={id}
         className={className}
       >
         {children}
@@ -91,6 +94,7 @@ function ScrollIntoView({ children, comeFrom, className }) {
         delay: 0.25,
       }}
       viewport={{ once: true }}
+      id={id}
       className={className}
     >
       {children}
