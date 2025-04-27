@@ -1,5 +1,6 @@
 import { IoMdMail } from "react-icons/io";
 import { FaLinkedin } from "react-icons/fa";
+import ScrollIntoView from "./ScrollIntoView";
 
 function Contact() {
   function handleMailClick() {
@@ -19,7 +20,7 @@ function Contact() {
   }
 
   return (
-    <div className="pb-20 p-4" id="contact">
+    <ScrollIntoView comeFrom="bottom" className="pb-20 p-4" id="contact">
       <div className="w-full text-center tracking-wide pt-16">
         <div className="font-semibold text-2xl text-gray-500 xs:text-lg xs:text-gray-50">
           Get in Touch
@@ -46,7 +47,7 @@ function Contact() {
           </div>
         </div>
       </div>
-    </div>
+    </ScrollIntoView>
   );
 }
 

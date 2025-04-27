@@ -1,4 +1,5 @@
 import ProjectCard from "./ProjectCard";
+import ScrollIntoView from "./ScrollIntoView";
 
 const projects = [
   {
@@ -54,7 +55,7 @@ const projects = [
 
 function Projects() {
   return (
-    <div id="projects" className="p-10">
+    <ScrollIntoView comeFrom="bottom" id="projects" className="p-10">
       <div className="text-center pb-20">
         <div className="font-semibold text-lg md:text-xl text-gray-500">
           Browse My
@@ -75,7 +76,7 @@ function Projects() {
           />
         ))}
       </div>
-    </div>
+    </ScrollIntoView>
   );
 }
 

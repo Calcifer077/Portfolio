@@ -1,5 +1,6 @@
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { Link } from "react-scroll";
+import ScrollIntoView from "./ScrollIntoView";
 
 function Hero() {
   return (
@@ -8,16 +9,22 @@ function Hero() {
       id="about"
     >
       {/* Left Section with Image */}
-      <div className="w-full xl:w-1/2 flex justify-center items-center xl:justify-start mx-auto xl:ml-26">
+      <ScrollIntoView
+        comeFrom="left"
+        className="w-full xl:w-1/2 flex justify-center items-center xl:justify-start mx-auto xl:ml-26"
+      >
         <img
           src="profile-pic.png"
           className="w-[250px] h-[250px] xl:w-[350px] xl:h-[350px] object-cover rounded-full border-2 border-gray-400"
           alt="Profile"
         />
-      </div>
+      </ScrollIntoView>
 
       {/* Right Section with Text */}
-      <div className="w-full xl:w-1/2 flex flex-col justify-center items-center mx-auto text-center xl:text-left xl:pr-20 pt-10 xl:pt-0">
+      <ScrollIntoView
+        comeFrom="right"
+        className="w-full xl:w-1/2 flex flex-col justify-center items-center mx-auto text-center xl:text-left xl:pr-20 pt-10 xl:pt-0"
+      >
         <div className="text-lg">Hello, I'm</div>
         <div className="font-bold text-5xl xl:text-6xl tracking-wider pt-2">
           Mahesh
@@ -25,16 +32,6 @@ function Hero() {
         <div className="text-3xl xl:text-4xl tracking-wider pt-2">
           FullStack Developer
         </div>
-
-        {/* Buttons */}
-        {/* <div className="flex flex-col xl:flex-row justify-center xl:justify-start items-center gap-6 text-lg mt-8 w-full">
-          <button className="border w-8/10 xl:w-1/2 h-full border-gray-500 text-gray-700 py-3 px-6 rounded-full hover:bg-gray-700 hover:text-gray-100 transition-all duration-300 cursor-pointer">
-            Download Resume
-          </button>
-          <button className="border w-8/10 xl:w-1/2 h-full border-gray-500 text-white py-3 px-6 rounded-full bg-gray-900 hover:bg-gray-700 transition-all duration-300 cursor-pointer">
-            Contact Info
-          </button>
-        </div> */}
 
         <div className="flex flex-col xl:flex-row justify-center xl:justify-start items-center gap-6 text-lg mt-8 w-full">
           <button
@@ -46,12 +43,12 @@ function Hero() {
               link.click();
               document.body.removeChild(link);
             }}
-            className="border w-8/10 xl:w-1/2 h-full border-gray-500 text-gray-700 py-3 px-6 rounded-full hover:bg-gray-700 hover:text-gray-100 transition-all duration-300 cursor-pointer"
+            className="border w-8/10 xl:w-1/2 h-full border-gray-500 text-gray-700 py-3 px-6 rounded-full hover:bg-gray-700 hover:text-gray-100 transition-all cursor-pointer"
           >
             Download Resume
           </button>
 
-          <button className="border w-8/10 xl:w-1/2 h-full border-gray-500 text-white py-3 px-6 rounded-full bg-gray-900 hover:bg-gray-700 transition-all duration-300 cursor-pointer">
+          <button className="border w-8/10 xl:w-1/2 h-full border-gray-500 text-white py-3 px-6 rounded-full bg-gray-900 hover:bg-gray-700 transition-all cursor-pointer">
             <Link to="contact" smooth={true} duration={500}>
               Contact Info
             </Link>
@@ -77,7 +74,7 @@ function Hero() {
             <FaLinkedin />
           </a>
         </div>
-      </div>
+      </ScrollIntoView>
     </div>
   );
 }

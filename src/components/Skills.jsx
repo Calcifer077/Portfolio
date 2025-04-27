@@ -1,8 +1,9 @@
 import { FaCircleCheck } from "react-icons/fa6";
+import ScrollIntoView from "./ScrollIntoView";
 
 function Skills() {
   return (
-    <div id="skills">
+    <ScrollIntoView comeFrom="bottom" id="skills">
       <div className="text-center p-10">
         <div className="font-semibold text-xl text-gray-500">Explore My</div>
         <div className="font-bold text-5xl tracking-wide">Skills</div>
@@ -11,7 +12,10 @@ function Skills() {
       {/* Skills sections start here */}
       <div className="flex flex-col min-[870px]:flex-row items-center justify-center gap-12 md:gap-6 xl:gap-16">
         {/* Frontend skills start here */}
-        <div className="border-2 border-gray-500 p-4 pl-6 rounded-4xl w-96 h-96 bg-gray-50">
+        <ScrollIntoView
+          comeFrom="left"
+          className="border-2 border-gray-500 p-4 pl-6 rounded-4xl w-96 h-96 bg-gray-50"
+        >
           <div className="text-center font-bold text-3xl text-gray-700 mb-6">
             Frontend Development
           </div>
@@ -56,11 +60,14 @@ function Skills() {
               </div>
             </div>
           </div>
-        </div>
+        </ScrollIntoView>
         {/* Frontend skills ends here */}
 
         {/* Backend skills start here */}
-        <div className="border-2 border-gray-500 p-4 pl-6 rounded-4xl w-96 h-96 bg-gray-50">
+        <ScrollIntoView
+          comeFrom="right"
+          className="border-2 border-gray-500 p-4 pl-6 rounded-4xl w-96 h-96 bg-gray-50"
+        >
           <div className="text-center font-bold text-3xl text-gray-700 mb-6">
             Backend Development
           </div>
@@ -121,10 +128,10 @@ function Skills() {
               </div>
             </div>
           </div>
-        </div>
+        </ScrollIntoView>
         {/* Backend skills start here */}
       </div>
-    </div>
+    </ScrollIntoView>
   );
 }
 
