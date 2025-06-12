@@ -21,7 +21,12 @@ function Skills() {
           </div>
           <div className="grid grid-cols-2">
             <div className="flex items-center gap-4 p-2">
-              <FaCircleCheck className="text-1xl" />
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg"
+                height="25px"
+                width="25px"
+              />
+
               <div>
                 <div className="font-bold">HTML</div>
                 <div>Intermediate</div>
@@ -29,7 +34,12 @@ function Skills() {
             </div>
 
             <div className="flex items-center gap-4 p-2">
-              <FaCircleCheck className="text-1xl" />
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg"
+                height="25px"
+                width="25px"
+              />
+
               <div>
                 <div className="font-bold">CSS</div>
                 <div>Intermediate</div>
@@ -37,7 +47,12 @@ function Skills() {
             </div>
 
             <div className="flex items-center gap-4 p-2">
-              <FaCircleCheck className="text-1xl" />
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"
+                height="25px"
+                width="25px"
+              />
+
               <div>
                 <div className="font-bold">Javascript</div>
                 <div>Intermediate</div>
@@ -45,7 +60,12 @@ function Skills() {
             </div>
 
             <div className="flex items-center gap-4 p-2">
-              <FaCircleCheck className="text-1xl" />
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg"
+                height="25px"
+                width="25px"
+              />
+
               <div>
                 <div className="font-bold">React JS</div>
                 <div>Intermediate</div>
@@ -53,7 +73,12 @@ function Skills() {
             </div>
 
             <div className="flex items-center gap-4 p-2">
-              <FaCircleCheck className="text-1xl" />
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg"
+                height="25px"
+                width="25px"
+              />
+
               <div>
                 <div className="font-bold">Tailwind CSS</div>
                 <div>Basic</div>
@@ -73,7 +98,12 @@ function Skills() {
           </div>
           <div className="grid grid-cols-2">
             <div className="flex items-center gap-4 p-2">
-              <FaCircleCheck className="text-1xl" />
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg"
+                height="25px"
+                width="25px"
+              />
+
               <div>
                 <div className="font-bold">Node JS</div>
                 <div>Intermediate</div>
@@ -81,7 +111,12 @@ function Skills() {
             </div>
 
             <div className="flex items-center gap-4 p-2">
-              <FaCircleCheck className="text-1xl" />
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg"
+                height="25px"
+                width="25px"
+              />
+
               <div>
                 <div className="font-bold">Express JS</div>
                 <div>Intermediate</div>
@@ -89,7 +124,12 @@ function Skills() {
             </div>
 
             <div className="flex items-center gap-4 p-2">
-              <FaCircleCheck className="text-1xl" />
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg"
+                height="25px"
+                width="25px"
+              />
+
               <div>
                 <div className="font-bold">MongoDB</div>
                 <div>Intermediate</div>
@@ -97,7 +137,7 @@ function Skills() {
             </div>
 
             <div className="flex items-center gap-4 p-2">
-              <FaCircleCheck className="text-1xl" />
+              <FaCircleCheck className="text-2xl" />
               <div>
                 <div className="font-bold">JWT</div>
                 <div>Intermediate</div>
@@ -105,15 +145,20 @@ function Skills() {
             </div>
 
             <div className="flex items-center gap-4 p-2">
-              <FaCircleCheck className="text-1xl" />
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg"
+                height="25px"
+                width="25px"
+              />
+
               <div>
-                <div className="font-bold">Git</div>
+                <div className="font-bold">Github</div>
                 <div>Basic</div>
               </div>
             </div>
 
             <div className="flex items-center gap-4 p-2">
-              <FaCircleCheck className="text-1xl" />
+              <FaCircleCheck className="text-2xl" />
               <div>
                 <div className="font-bold">Rest APIs</div>
                 <div>Intermediate</div>
@@ -121,7 +166,11 @@ function Skills() {
             </div>
 
             <div className="flex items-center gap-4 p-2">
-              <FaCircleCheck className="text-1xl" />
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/supabase/supabase-original.svg"
+                height="25px"
+                width="25px"
+              />
               <div>
                 <div className="font-bold">Supabase</div>
                 <div>Basic</div>
