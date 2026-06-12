@@ -220,7 +220,6 @@ function ContactForm() {
     const data = await res.json();
     console.log("API response:", data);
 
-    // Simulate API call — replace with your actual endpoint
     if (data.success) {
       setFormState("success");
     } else {
