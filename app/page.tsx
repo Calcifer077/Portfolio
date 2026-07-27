@@ -7,6 +7,7 @@ import type { ReactNode } from "react";
 import { ArrowUpRight, Download, Mail } from "lucide-react";
 import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { Badge } from "@/components/ui/badge";
+import { TextAnimate } from "@/components/ui/text-animate";
 
 import { skills, projects, socials } from "@/app/_lib/data";
 import { SiLeetcode, SiCodeforces } from "react-icons/si";
@@ -68,17 +69,19 @@ export default function Home() {
           Full Stack Developer — JavaScript, React, Node.js
         </motion.p>
 
-        <motion.p
+        <motion.div
           custom={3}
           variants={fadeUp}
           initial="hidden"
           animate="show"
           className="text-text-secondary leading-relaxed text-lg max-w-xl"
         >
-          I like building things. Currently learning Python and exploring the
-          world of machine learning. Always open to new opportunities and
-          collaborations.
-        </motion.p>
+          <TextAnimate animation="blurInUp" by="word">
+            I like building things. Currently learning Python and exploring the
+            world of machine learning. Always open to new opportunities and
+            collaborations.
+          </TextAnimate>
+        </motion.div>
 
         {/* Social Links */}
         <motion.div
