@@ -34,7 +34,7 @@ const firaCode = Fira_Code({
 export const metadata: Metadata = {
   title: {
     template: "%s",
-    default: "Full Stack Developer",
+    default: "Mahesh Portfolio",
   },
   description:
     "Full-stack developer crafting high-performance web applications with precision and care.",
