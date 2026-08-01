@@ -89,10 +89,17 @@ export default function Home() {
           animate="show"
           className="text-text-secondary leading-relaxed text-lg max-w-xl"
         >
-          <TextAnimate animation="blurInUp" by="word">
-            I like building things. Currently learning Python and exploring the
-            world of machine learning. Always open to new opportunities and
-            collaborations.
+         
+          <TextAnimate animation="blurInUp" by="word" className="inline">
+            {"I like building things. Currently learning Python and exploring the world of machine learning. Always "}
+          </TextAnimate>
+
+          <span className="underline underline-offset-2 decoration-wavy decoration-primary decoration-2">
+            open to new opportunities
+          </span>
+
+          <TextAnimate animation="blurInUp" by="word" className="inline">
+            {" and collaborations."}
           </TextAnimate>
         </motion.div>
 
