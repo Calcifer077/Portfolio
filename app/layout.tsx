@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Outfit, DM_Sans, Fira_Code } from "next/font/google";
 import "./globals.css";
 
+import { TooltipProvider } from "@/components/ui/tooltip";
 import Navbar from "@/app/_components/layout/Navbar";
 import Footer from "@/app/_components/layout/Footer";
 import { cn } from "@/lib/utils";
@@ -34,7 +35,7 @@ const firaCode = Fira_Code({
 export const metadata: Metadata = {
   title: {
     template: "%s",
-    default: "Mahesh Portfolio",
+    default: "Mahesh's Portfolio",
   },
   description:
     "Full-stack developer crafting high-performance web applications with precision and care.",
@@ -83,7 +84,7 @@ export default function RootLayout({
         <Navbar />
         <div className="flex flex-col min-h-screen">
           <main className="flex-1 pt-32 mx-auto w-full max-w-250 px-6">
-            {children}
+            <TooltipProvider>{children}</TooltipProvider>
           </main>
           <Footer />
         </div>

@@ -4,10 +4,15 @@
 import { motion, type Variants } from "motion/react";
 import Link from "next/link";
 import type { ReactNode } from "react";
-import { ArrowUpRight, Download, Mail } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Download, Mail } from "lucide-react";
 import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { Badge } from "@/components/ui/badge";
 import { TextAnimate } from "@/components/ui/text-animate";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 import { skills, projects, socials } from "@/app/_lib/data";
 import { SiLeetcode, SiCodeforces } from "react-icons/si";
@@ -33,6 +38,14 @@ const socialIcons: Record<string, ReactNode> = {
   LeetCode: <SiLeetcode size={18} />,
   Codeforces: <SiCodeforces size={18} />,
 };
+
+const stickerRotations = [-2, 1, 2, -1, 3, -3];
+
+const stickerInks = [
+  "hover:border-violet-500 hover:text-violet-500 hover:bg-violet-500/10 hover:shadow-[3px_3px_0_var(--color-orange)]",
+  "hover:border-orange-500 hover:text-orange-500 hover:bg-orange-500/10 hover:shadow-[3px_3px_0_var(--color-violet)]",
+  "hover:border-primary hover:text-primary hover:bg-primary/10 hover:shadow-[3px_3px_0_var(--color-orange)]",
+];
 
 export default function Home() {
   return (
@@ -91,17 +104,27 @@ export default function Home() {
           animate="show"
           className="flex items-center gap-3 pt-2"
         >
-          {socials.map((s) => (
-            <a
-              key={s.label}
-              href={s.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={s.label}
-              className="w-10 h-10 flex items-center justify-center rounded border border-border-subtle text-text-muted hover:text-primary hover:border-primary/50 transition-all duration-200 bg-bg-surface"
-            >
-              {socialIcons[s.label] ?? <Mail size={18} />}
-            </a>
+          {socials.map((s, i) => (
+            <Tooltip key={s.label}>
+              <TooltipTrigger>
+                <motion.a
+                  href={s.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={s.label}
+                  initial="hidden"
+                  animate="show"
+                  variants={fadeUp}
+                  custom={4 + i * 0.05}
+                  className="flex items-center justify-center w-10 h-10 rounded border border-border-subtle bg-bg-surface text-text-muted
+                     transition-colors duration-150 ease-[cubic-bezier(0.23,1,0.32,1)]
+                     hover:text-primary hover:border-primary/50"
+                >
+                  {socialIcons[s.label] ?? <Mail size={18} />}
+                </motion.a>
+              </TooltipTrigger>
+              <TooltipContent side="top">{s.label}</TooltipContent>
+            </Tooltip>
           ))}
         </motion.div>
 
@@ -115,9 +138,13 @@ export default function Home() {
         >
           <Link
             href="/projects"
-            className="flex items-center gap-2 px-5 py-2.5 rounded bg-brand-primary text-brand-on-primary font-mono text-sm font-bold hover:opacity-90 transition-opacity"
+            className="group flex items-center gap-2 px-5 py-2.5 rounded bg-brand-primary text-brand-on-primary font-mono text-sm font-bold hover:opacity-90 transition-opacity"
           >
-            View Work <ArrowUpRight size={15} />
+            View Work
+            <ArrowRight
+              size={15}
+              className="transition-transform duration-300 group-hover:-rotate-45"
+            />
           </Link>
 
           <a
@@ -145,6 +172,8 @@ export default function Home() {
         <div className="flex flex-wrap gap-2">
           {skills.map((skill, i) => {
             const Icon = skill.icon;
+            const rotation = stickerRotations[i % stickerRotations.length];
+            const ink = stickerInks[i % stickerInks.length];
 
             return (
               <motion.div
@@ -152,11 +181,12 @@ export default function Home() {
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.04, duration: 0.3 }}
+                transition={{ delay: i * 0.02, duration: 0.3 }}
+                whileHover={{ rotate: rotation, scale: 1.05 }}
               >
                 <Badge
                   variant="outline"
-                  className="font-mono text-xs px-3 py-3 border-border-subtle bg-bg-surface text-text-secondary hover:border-primary/40 hover:text-primary hover:bg-bg-elevated transition-all duration-200"
+                  className={`font-mono text-xs px-3 py-3 border-border-subtle bg-bg-surface text-text-secondary transition-all duration-150 ${ink}`}
                 >
                   <Icon className="h-3.5 w-3.5" />
                   {skill.label}
@@ -181,9 +211,13 @@ export default function Home() {
 
           <Link
             href="/projects"
-            className="font-mono text-xs text-primary hover:underline flex items-center gap-1"
+            className="group font-mono text-xs text-primary flex items-center gap-1"
           >
-            All projects <ArrowUpRight size={12} />
+            All projects
+            <ArrowRight
+              size={12}
+              className="transition-transform duration-300 group-hover:-rotate-45"
+            />
           </Link>
         </div>
 
@@ -201,13 +235,13 @@ export default function Home() {
               className="group block p-5 rounded border border-border-subtle bg-bg-surface card-hover"
             >
               <div className="flex items-start justify-between mb-3">
-                <h3 className="font-display font-bold text-text-primary group-hover:text-primary transition-colors">
+                <h3 className="font-display font-bold text-text-primary group-hover:text-primary transition-colors group-hover:underline underline-offset-2">
                   {project.title}
                 </h3>
 
-                <ArrowUpRight
+                <ArrowRight
                   size={16}
-                  className="text-text-muted group-hover:text-primary transition-colors shrink-0 mt-0.5"
+                  className="text-text-muted group-hover:text-primary group-hover:-rotate-45 duration-300 transition shrink-0 mt-0.5"
                 />
               </div>
 
