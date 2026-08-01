@@ -37,10 +37,9 @@ export default function Navbar() {
         <header
           className={cn(
             "pointer-events-auto transition-all duration-500 ease-in-out border border-border-subtle",
-
             "mt-0",
             "rounded-none",
-            "bg-surface/60 backdrop-blur-md",
+            "bg-bg-deep/90 backdrop-blur-md",
             "w-full max-w-full",
           )}
           role="banner"
