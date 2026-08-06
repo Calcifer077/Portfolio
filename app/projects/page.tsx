@@ -58,7 +58,7 @@ function ImageCarousel({ images, title }: { images: string[]; title: string }) {
 
   return (
     <div
-      className="relative w-full h-full min-h-70 md:min-h-0 overflow-hidden rounded-l-none md:rounded-tl-xl rounded-t-xl md:rounded-t-none bg-bg-deep group"
+      className="relative w-full h-full min-h-72 md:min-h-0 overflow-hidden rounded-l-none md:rounded-tl-xl rounded-t-xl md:rounded-t-none bg-bg-deep group"
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
     >
