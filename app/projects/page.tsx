@@ -63,16 +63,32 @@ function ImageCarousel({ images, title }: { images: string[]; title: string }) {
       onTouchEnd={handleTouchEnd}
     >
       <AnimatePresence mode="wait">
-        <motion.img
+        <motion.div
           key={current}
-          src={images[current]}
-          alt={`${title} screenshot ${current + 1}`}
-          className="absolute inset-0 w-full h-full object-cover md:grayscale md:group-hover:grayscale-0 transition-all duration-700"
+          className="absolute inset-0"
           initial={{ opacity: 0, scale: 1.04 }}
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.97 }}
           transition={{ duration: 0.4, ease: "easeInOut" }}
-        />
+        >
+          {/* Blurred cover background */}
+          <img
+            src="https://images.unsplash.com/photo-1687042277586-971369d3d241?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt=""
+            aria-hidden="true"
+            className="absolute inset-0 w-full h-full object-cover blur-2xl scale-110 opacity-60 md:grayscale md:group-hover:grayscale-0 transition-all duration-700"
+          />
+
+          {/* Optional dark scrim so the foreground image pops */}
+          <div className="absolute inset-0 bg-bg-deep/40" />
+
+          {/* Foreground image, fully visible */}
+          <img
+            src={images[current]}
+            alt={`${title} screenshot ${current + 1}`}
+            className="relative w-full h-full object-contain md:grayscale md:group-hover:grayscale-0 transition-all duration-700"
+          />
+        </motion.div>
       </AnimatePresence>
 
       {/* Gradient overlay */}
@@ -184,12 +200,12 @@ function FeaturedCard({ project, index }: { project: Project; index: number }) {
       {/* ── Top: Image + Description side by side ── */}
       <div className="flex flex-col md:flex-row">
         {/* Left: Carousel */}
-        <div className="w-full md:w-[45%] md:min-h-80 shrink-0">
+        <div className="w-full md:flex-3 md:min-h-80">
           <ImageCarousel images={project.images} title={project.title} />
         </div>
 
         {/* Right: Meta */}
-        <div className="flex-1 p-6 md:p-8 flex flex-col gap-5 min-w-0">
+        <div className="w-full md:flex-2 p-6 md:p-8 flex flex-col gap-5 min-w-0">
           {/* Header */}
           <div className="space-y-1">
             <div className="flex items-center gap-2 mb-2">
