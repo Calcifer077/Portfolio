@@ -75,6 +75,55 @@ export type Project = {
 export const projects: Project[] = [
   {
     id: 1,
+    title: "Lumina Reader",
+    description:
+      "A personal, self-hosted ebook reader. Upload PDF and EPUB files, read them in your browser, and pick up exactly where you left off.",
+    longDescription:
+      "A personal, self-hosted ebook reader. Upload PDF and EPUB files, read them in your browser, and pick up exactly where you left off — no accounts, no multi-tenant complexity, just your books on your own Supabase project.",
+    tags: [
+      "Next.js",
+      "React",
+      "Tailwind",
+      "Shadcn/ui",
+      "Supabase",
+      "React PDF",
+      "React Reader",
+    ],
+    category: "fullstack",
+    github: "https://github.com/Calcifer077/lumina-reader",
+    live: "",
+    featured: true,
+    images: [
+      "/project_images/lumina_reader/image_1.png",
+      "/project_images/lumina_reader/image_2.png",
+      "/project_images/lumina_reader/image_3.png",
+      "/project_images/lumina_reader/image_4.png",
+    ],
+    features: [
+      {
+        title: "Read PDF and EPUB entirely in your browser",
+        description:
+          "Supports both PDF and EPUB formats with dedicated readers, allowing you to enjoy your entire library without leaving the browser.",
+      },
+      {
+        title: "Automatically save and resume reading progress",
+        description:
+          "Your reading position is continuously saved to the database with a local fallback, so every book opens exactly where you left off.",
+      },
+      {
+        title: "Private, self-hosted digital library",
+        description:
+          "Store your books securely in your own Supabase project using private storage and signed URLs, giving you complete ownership of your library without relying on third-party services.",
+      },
+      {
+        title: "Responsive interface built with modern tools",
+        description:
+          "Built with Next.js, Tailwind CSS, and shadcn/ui to provide a fast, responsive, and polished reading experience across devices.",
+      },
+    ],
+  },
+  {
+    id: 2,
     title: "Lively votes",
     description:
       "A Real-time polling application built to learn and experiment with WebSockets.",
@@ -109,7 +158,7 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: 2,
+    id: 3,
     title: "Idea Vault",
     description:
       "A clean, modern idea management app + CLI that lets you store, organize, and manage ideas in one central place, powered by a GitHub repository using Markdown files.",
@@ -149,7 +198,7 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: 3,
+    id: 4,
     title: "The wild oasis",
     description:
       "Developer-first microservice health monitoring with distributed tracing, compiled to Wasm for edge deployment.",
@@ -190,7 +239,7 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: 4,
+    id: 5,
     title: "Natours",
     description:
       "A full-stack tour booking application with user authentication and tour management.",
@@ -205,7 +254,7 @@ export const projects: Project[] = [
     features: [],
   },
   {
-    id: 5,
+    id: 6,
     title: "Blogger",
     description:
       "A blogging platform with user authentication, CRUD operations for posts, and a clean UI.",
@@ -221,7 +270,7 @@ export const projects: Project[] = [
     features: [],
   },
   {
-    id: 6,
+    id: 7,
     title: "Movie website",
     description:
       "A movie information website that allows users to browse and search for movies, view details, and write reviews.",
@@ -236,7 +285,7 @@ export const projects: Project[] = [
     features: [],
   },
   {
-    id: 7,
+    id: 8,
     title: "Application Tracker",
     description:
       "A job application tracking system that allows users to manage their job applications and track statuses.",
@@ -252,7 +301,7 @@ export const projects: Project[] = [
   },
 
   {
-    id: 8,
+    id: 9,
     title: "Proxy Server",
     description: "A proxy server implementation with caching capabilities.",
     tags: ["Express"],
